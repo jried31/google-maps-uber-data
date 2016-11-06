@@ -14,4 +14,5 @@ router.use(cors());
 router.use(Express.static(path.resolve(__dirname, 'client')));
 // Include Additional ExpressJS routes created from seperate files in the routes directory
 require('./routes')(router, database);
-router.listen(80);
+var server = http.createServer(router);
+server.listen(80);
