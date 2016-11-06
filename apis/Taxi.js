@@ -13,7 +13,7 @@ module.exports = function(sequelize,api){
     	    if(polylines !== undefined && polylines.length > 0){
     	        queryString += " AND ST_Within(pickup_point::geometry, ST_GeomFromText('POLYGON(("+ polylines + "))',4326))";
     	    }
-    	    //queryString += " LIMIT 1000;"
+    	    queryString += " LIMIT 1000;"
             sequelize.query(queryString, { type: sequelize.QueryTypes.SELECT}).then(function(data) {
                 resolve(data);
             }).catch(function(error){
