@@ -15,4 +15,4 @@ router.use(Express.static(path.resolve(__dirname, 'client')));
 // Include Additional ExpressJS routes created from seperate files in the routes directory
 require('./routes')(router, database);
 var server = http.createServer(router);
-server.listen(8080);
+server.listen(80);
